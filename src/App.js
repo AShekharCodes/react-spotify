@@ -14,7 +14,7 @@ const App = () => {
     }
   }, [token, dispatch]);
 
-  return <>{!token ? <Spotify /> : <Login />}</>;
+  return <>{token ? <Spotify /> : <Login />}</>;
 };
 
 export default App;

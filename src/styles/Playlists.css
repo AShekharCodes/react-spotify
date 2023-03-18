@@ -1,0 +1,13 @@
+.li-playlists {
+  color: rgb(177, 177, 177);
+  font-family: "Poppins";
+  cursor: pointer;
+  margin: 12px 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.li-playlists:hover {
+  transition: 0.3s ease-in-out;
+  color: white;
+}

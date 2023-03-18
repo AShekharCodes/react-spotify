@@ -9,20 +9,32 @@ import "../styles/Spotify.css";
 const Spotify = () => {
   return (
     <>
-      <div className="container">
-        <div className="spotify-body">
-          <Sidebar />
-          <div className="body">
-            <Navbar />
-            <div className="body-contents">
-              <Body />
+      <Grid
+        container
+        spacing={0}
+        sx={{ height: "100vh", width: "100vw", minWidth: "350px" }}
+      >
+        <Grid item xs={12} sm={12} md={12} lg={12} sx={{ height: "85vh" }}>
+          <div className="main-body">
+            <div className="sidebar-body">
+              <Sidebar />
+            </div>
+            <div className="body">
+              <Grid container spacing={0}>
+                <Grid item xs={12} sm={12} md={12} lg={12}>
+                  <Navbar />
+                </Grid>
+                <Grid item xs={12} sm={12} md={12} lg={12}>
+                  <Body />
+                </Grid>
+              </Grid>
             </div>
           </div>
-        </div>
-        <div className="spotify-footer">
+        </Grid>
+        <Grid item xs={12} sm={12} md={12} lg={12} sx={{ height: "15vh" }}>
           <Footer />
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </>
   );
 };
