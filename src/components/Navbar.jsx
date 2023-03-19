@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
-import { Box, Drawer, IconButton, Toolbar } from "@mui/material/";
+import { Box, Drawer, IconButton, Toolbar, Avatar } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useStateProvider } from "../utils/StateProvider";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
+  const [{ userInfo }] = useStateProvider();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -24,8 +27,10 @@ const Navbar = () => {
         height: "56px",
         margin: "5px",
         position: "relative",
-        backgroundColor: "#1db954",
+        // backgroundColor: "rgba(0,0,0, 0.5)",
+        border: "1px solid black",
         borderRadius: "30px",
+        // justifyContent: "flex-end",
       }}
     >
       <div>
@@ -49,7 +54,7 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
       </div>
-      <Box
+      {/* <Box
         sx={{
           display: { xs: "block", sm: "none" },
           position: "absolute",
@@ -68,7 +73,14 @@ const Navbar = () => {
           src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
           alt="Spotify"
         />
-      </Box>
+      </Box> */}
+      <div className="user-info">
+        <Avatar
+          src={userInfo.userImage}
+          sx={{ width: "40px", height: "40px" }}
+        />
+        <span>{userInfo.userName}</span>
+      </div>
       <Box component="nav">
         <Drawer
           variant="temporary"

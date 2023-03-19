@@ -1,0 +1,16 @@
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: rgb(214, 211, 211);
+  font-family: "Poppins";
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0px 10px;
+  margin: 5px;
+  margin-left: auto;
+  cursor: pointer;
+}

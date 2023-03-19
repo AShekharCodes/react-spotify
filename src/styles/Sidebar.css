@@ -16,7 +16,7 @@
   padding: 15px 46px;
   margin: 5px 5px 0px 5px;
   cursor: pointer;
-  background-color: gray;
+  background-color: #1db954;
   border-radius: 30px;
 }
 
@@ -84,11 +84,11 @@
 
 @media only screen and (max-width: 600px) {
   .sidebar {
-    width: 280px;
+    width: 260px;
     height: 100%;
   }
   .logo-div img {
-    padding: 20px 76px;
+    padding: 20px 66px;
     background-color: #1db954;
   }
 
