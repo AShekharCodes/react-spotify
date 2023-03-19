@@ -27,7 +27,7 @@ const Playlist = () => {
   }, [token, dispatch]);
   return (
     <>
-      <ul>
+      <ul className="ul-playlists">
         {playlists.map(({ name, id }) => {
           return (
             <li className="li-playlists" key={id}>

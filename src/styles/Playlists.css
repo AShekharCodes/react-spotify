@@ -1,10 +1,19 @@
+.ul-playlists {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .li-playlists {
   color: rgb(177, 177, 177);
   font-family: "Poppins";
   cursor: pointer;
   margin: 12px 20px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
 }
 
 .li-playlists:hover {

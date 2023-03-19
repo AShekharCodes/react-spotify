@@ -9,32 +9,47 @@ const Sidebar = () => {
   return (
     <>
       <div className="sidebar">
-        <div className="logo-div">
-          <img
-            className="sidebar-logo"
-            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
-            alt="Spotify"
-          />
+        <div className="top-div">
+          <div className="logo-div">
+            <img
+              src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
+              alt="Spotify"
+            />
+          </div>
+          <hr className="top-bar" />
+          <div className="div-top">
+            <ul className="ul-top">
+              <li className="li-top">
+                <HomeRoundedIcon />
+                <span>Home</span>
+              </li>
+              <li className="li-top">
+                <SearchRoundedIcon />
+
+                <span>Search</span>
+              </li>
+              <li className="li-top">
+                <LibraryMusicRoundedIcon />
+
+                <span>Your Library</span>
+              </li>
+            </ul>
+          </div>
+          <hr className="bottom-bar" />
         </div>
-        <hr className="top-bar" />
-        <ul>
-          <li className="li-top">
-            <HomeRoundedIcon />
-            <span>Home</span>
-          </li>
-          <li className="li-top">
-            <SearchRoundedIcon />
-
-            <span>Search</span>
-          </li>
-          <li className="li-top">
-            <LibraryMusicRoundedIcon />
-
-            <span>Your Library</span>
-          </li>
-        </ul>
-        <hr className="bottom-bar" />
-        <Playlists />
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "5px",
+            boxShadow: " 0px 10px 20px black",
+            zIndex: "5",
+          }}
+        >
+          <span className="playlist-header">Playlists</span>
+        </div>
+        <div className="playlists-div">
+          <Playlists />
+        </div>
       </div>
     </>
   );

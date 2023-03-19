@@ -22,7 +22,10 @@ const Navbar = () => {
       sx={{
         display: "flex",
         height: "56px",
+        margin: "5px",
         position: "relative",
+        backgroundColor: "#1db954",
+        borderRadius: "30px",
       }}
     >
       <div>
@@ -56,10 +59,10 @@ const Navbar = () => {
       >
         <img
           style={{
-            width: "140px",
-            height: "40px",
+            width: "122px",
+            height: "36px",
             position: "relative",
-            padding: "8px 0px",
+            padding: "10px",
             cursor: "pointer",
           }}
           src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
