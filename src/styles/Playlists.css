@@ -9,14 +9,14 @@
   font-family: "Poppins";
   cursor: pointer;
   margin: 12px 20px;
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: bold;
+  transition: 0.3s ease-in-out;
   /* overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; */
 }
 
 .li-playlists:hover {
-  transition: 0.3s ease-in-out;
   color: white;
 }

@@ -10,7 +10,7 @@ import axios from "axios";
 import { reducerCases } from "../utils/Constants";
 
 const Spotify = () => {
-  const [{ token }, dispatch] = useStateProvider();
+  const [{ token, selectedPlaylist }, dispatch] = useStateProvider();
   useEffect(() => {
     const getUserInfo = async () => {
       const { data } = await axios.get("https://api.spotify.com/v1/me", {
@@ -41,7 +41,10 @@ const Spotify = () => {
               <div className="sidebar-body">
                 <Sidebar />
               </div>
-              <div className="body">
+              <div
+                className="body"
+                style={{ backgroundColor: `${selectedPlaylist.color}` }}
+              >
                 <Grid container spacing={0}>
                   <Grid item xs={12} sm={12} md={12} lg={12}>
                     <Navbar />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Box, Drawer, IconButton, Toolbar, Avatar } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import { useStateProvider } from "../utils/StateProvider";
 import "../styles/Navbar.css";
 
@@ -27,10 +28,9 @@ const Navbar = () => {
         height: "56px",
         margin: "5px",
         position: "relative",
-        // backgroundColor: "rgba(0,0,0, 0.5)",
-        border: "1px solid black",
+        // backgroundColor: "rgba(0, 0, 0, 0.4)",
+        // border: "1px solid black",
         borderRadius: "30px",
-        // justifyContent: "flex-end",
       }}
     >
       <div>
@@ -47,36 +47,21 @@ const Navbar = () => {
             onClick={handleDrawerToggle}
             sx={{
               display: { sm: "none" },
-              padding: "0px 15px 0px 25px",
+              padding: "0px 5px 0px 17px",
             }}
           >
             <MenuIcon sx={{ color: "white" }} />
           </IconButton>
         </Toolbar>
       </div>
-      {/* <Box
-        sx={{
-          display: { xs: "block", sm: "none" },
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-      >
-        <img
-          style={{
-            width: "122px",
-            height: "36px",
-            position: "relative",
-            padding: "10px",
-            cursor: "pointer",
-          }}
-          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
-          alt="Spotify"
-        />
-      </Box> */}
+      <div className="search-div">
+        <SearchRoundedIcon />
+        <input type="text" placeholder="Songs, artists and more" />
+      </div>
       <div className="user-info">
         <Avatar
           src={userInfo.userImage}
+          alt="display_image"
           sx={{ width: "40px", height: "40px" }}
         />
         <span>{userInfo.userName}</span>

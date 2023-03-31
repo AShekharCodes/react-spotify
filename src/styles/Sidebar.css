@@ -11,22 +11,15 @@
 }
 
 .logo-div img {
-  height: 34px;
-  width: 118px;
-  padding: 15px 46px;
-  margin: 5px 5px 0px 5px;
+  height: 38px;
+  width: 128px;
+  margin: 18px 20px;
   cursor: pointer;
-  background-color: #1db954;
-  border-radius: 30px;
-}
-
-.top-bar {
-  margin: 0px 10px 10px 10px;
-  border: 0.5px solid rgb(85, 84, 84);
 }
 
 .bottom-bar {
   margin: 10px;
+  margin-top: 20px;
   border: 0.5px solid rgb(85, 84, 84);
 }
 
@@ -44,29 +37,19 @@
   cursor: pointer;
   color: rgb(177, 177, 177);
   font-family: "Poppins";
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   align-items: center;
+  transition: 0.3s ease-in-out;
 }
 
 .li-top:hover {
-  transition: 0.3s ease-in-out;
   color: white;
 }
 
 .playlists-div {
   overflow-y: scroll;
   overflow-x: hidden;
-}
-
-.playlist-header {
-  color: rgb(177, 177, 177);
-  font-weight: bold;
-  font-family: "Poppins";
-  font-size: 14px;
-  width: 100%;
-  text-align: center;
-  padding: 0px 20px;
 }
 
 ::-webkit-scrollbar {
@@ -86,13 +69,5 @@
   .sidebar {
     width: 260px;
     height: 100%;
-  }
-  .logo-div img {
-    padding: 20px 66px;
-    background-color: #1db954;
-  }
-
-  .logo-div {
-    height: 84px;
   }
 }

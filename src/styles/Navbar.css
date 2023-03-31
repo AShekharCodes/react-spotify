@@ -1,16 +1,61 @@
 .user-info {
+  /* position: sticky; */
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   color: rgb(214, 211, 211);
   font-family: "Poppins";
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   border-radius: 30px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0px 10px;
-  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding-right: 10px;
+  margin: 10px;
   margin-left: auto;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.user-info:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.search-div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(236, 234, 234);
+  padding: 5px;
+  margin: 10px;
+  border-radius: 30px;
+  transition: 0.3s ease-in-out;
+  flex-grow: 0.4;
+}
+
+.search-div:focus-within {
+  transform: scale(1.05);
+}
+
+input {
+  border: none;
+  width: 100%;
+  font-family: "Poppins";
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgb(236, 234, 234);
+  border-radius: 30px;
+  font-size: 14px;
+  padding-right: 30px;
+}
+
+input:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-div {
+    margin-left: 5px;
+  }
 }

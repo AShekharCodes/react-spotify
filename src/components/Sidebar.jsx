@@ -16,7 +16,6 @@ const Sidebar = () => {
               alt="Spotify"
             />
           </div>
-          <hr className="top-bar" />
           <div className="div-top">
             <ul className="ul-top">
               <li className="li-top">
@@ -36,16 +35,6 @@ const Sidebar = () => {
             </ul>
           </div>
           <hr className="bottom-bar" />
-        </div>
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: "5px",
-            boxShadow: " 0px 10px 20px black",
-            zIndex: "5",
-          }}
-        >
-          <span className="playlist-header">Playlists</span>
         </div>
         <div className="playlists-div">
           <Playlists />
