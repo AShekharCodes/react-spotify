@@ -69,51 +69,64 @@ const Body = () => {
           <div className="playlist-info">
             <span className="playlist-name">{selectedPlaylist.name}</span>
             <span className="playlist-desc">
-              {selectedPlaylist.description}
+              {selectedPlaylist.description
+                ? selectedPlaylist.description.replace(/&amp;/g, "&")
+                : "Loading..."}
             </span>
           </div>
         </div>
-        <div className="tracks-info">
-          <div className="tracks-info-header">
-            <div className="track-number">#</div>
-            <div className="track-name">Title</div>
-            <div className="album">Album</div>
-            <div className="duration">
-              <AccessTimeIcon />
-            </div>
+        <div className="tracks-info-header">
+          <div className="track-number">#</div>
+          <div className="track-name">Title</div>
+          <div className="album">Album</div>
+          <div className="duration">
+            <AccessTimeIcon />
           </div>
-          <hr />
         </div>
+        <hr />
         <div className="tracklist">
           <ul>
-            {selectedPlaylist.tracks ? (
-              selectedPlaylist.tracks.map(
-                (
-                  {
-                    id,
-                    name,
-                    artists,
-                    image,
-                    duration,
-                    album,
-                    context_uri,
-                    track_number,
-                  },
-                  index
-                ) => (
-                  <div key={index} className="track-div">
-                    <li>{index + 1}</li>
-                    <img src={image} alt="Track" />
-                    <div className="name-div">
-                      <span className="name">{name}</span>
-                      <span className="artists">{artists}</span>
-                    </div>
-                  </div>
+            <li>
+              {selectedPlaylist.tracks ? (
+                selectedPlaylist.tracks.map(
+                  (
+                    {
+                      id,
+                      name,
+                      artists,
+                      image,
+                      duration,
+                      album,
+                      context_uri,
+                      track_number,
+                    },
+                    index
+                  ) => {
+                    const minutes = Math.floor(duration / 1000 / 60);
+                    const seconds = Math.floor(duration / 1000) % 60;
+                    const formattedDuration = `${minutes}:${seconds
+                      .toString()
+                      .padStart(2, "0")}`;
+                    return (
+                      <div key={index} className="track-div">
+                        <div className="track-number">{index + 1}</div>
+                        <div className="track-name">
+                          <img src={image} alt="Track" />
+                          <div className="name-div">
+                            <div className="main-name">{name}</div>
+                            <div className="artists">{artists.join(", ")}</div>
+                          </div>
+                        </div>
+                        <div className="album">{album}</div>
+                        <div className="duration">{formattedDuration}</div>
+                      </div>
+                    );
+                  }
                 )
-              )
-            ) : (
-              <div>Loading...</div>
-            )}
+              ) : (
+                <div>Loading...</div>
+              )}
+            </li>
           </ul>
         </div>
       </div>

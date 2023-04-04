@@ -30,6 +30,7 @@ const Navbar = () => {
           margin: "5px",
           // backgroundColor: "rgba(0, 0, 0, 0.4)",
           borderRadius: "30px",
+          // boxShadow: "1px 2px 5px",
         }}
       >
         <div>
