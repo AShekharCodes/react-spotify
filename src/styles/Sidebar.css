@@ -7,13 +7,13 @@
 }
 
 .logo-div {
-  height: 74px;
+  margin: 20px;
 }
 
 .logo-div img {
   height: 38px;
   width: 128px;
-  margin: 18px 20px;
+  position: inherit;
   cursor: pointer;
 }
 
@@ -48,12 +48,13 @@
 }
 
 .playlists-div {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {

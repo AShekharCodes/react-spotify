@@ -34,29 +34,31 @@ const Spotify = () => {
         <Grid
           container
           spacing={0}
-          sx={{ height: "100vh", width: "100vw", minWidth: "350px" }}
+          sx={{
+            height: "100vh",
+            width: "100vw",
+            minWidth: "350px",
+          }}
         >
-          <Grid item xs={12} sm={12} md={12} lg={12} sx={{ height: "85vh" }}>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
             <div className="main-body">
               <div className="sidebar-body">
                 <Sidebar />
               </div>
               <div
                 className="body"
-                style={{ backgroundColor: `${selectedPlaylist.color}` }}
+                style={{
+                  backgroundColor: `${
+                    selectedPlaylist.color ? selectedPlaylist.color : "#761dc9"
+                  }`,
+                }}
               >
-                <Grid container spacing={0}>
-                  <Grid item xs={12} sm={12} md={12} lg={12}>
-                    <Navbar />
-                  </Grid>
-                  <Grid item xs={12} sm={12} md={12} lg={12}>
-                    <Body />
-                  </Grid>
-                </Grid>
+                <Navbar />
+                <Body />
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} sx={{ height: "15vh" }}>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
             <Footer />
           </Grid>
         </Grid>

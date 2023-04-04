@@ -17,73 +17,73 @@ const Navbar = () => {
   // the drawer that pops up from left in small screen devices
   const drawer = (
     <Box sx={{ height: "100%" }}>
-      <Sidebar />
+      <Sidebar onClick={handleDrawerToggle} />
     </Box>
   );
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        height: "56px",
-        margin: "5px",
-        position: "relative",
-        // backgroundColor: "rgba(0, 0, 0, 0.4)",
-        // border: "1px solid black",
-        borderRadius: "30px",
-      }}
-    >
-      <div>
-        <Toolbar
-          disableGutters
-          sx={{
-            display: { sm: "none" },
-          }}
-        >
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
+    <div>
+      <Box
+        sx={{
+          display: "flex",
+          height: "56px",
+          margin: "5px",
+          // backgroundColor: "rgba(0, 0, 0, 0.4)",
+          borderRadius: "30px",
+        }}
+      >
+        <div>
+          <Toolbar
+            disableGutters
             sx={{
               display: { sm: "none" },
-              padding: "0px 5px 0px 17px",
             }}
           >
-            <MenuIcon sx={{ color: "white" }} />
-          </IconButton>
-        </Toolbar>
-      </div>
-      <div className="search-div">
-        <SearchRoundedIcon />
-        <input type="text" placeholder="Songs, artists and more" />
-      </div>
-      <div className="user-info">
-        <Avatar
-          src={userInfo.userImage}
-          alt="display_image"
-          sx={{ width: "40px", height: "40px" }}
-        />
-        <span>{userInfo.userName}</span>
-      </div>
-      <Box component="nav">
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            // blur in drawer's background
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          {drawer}
-        </Drawer>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{
+                display: { sm: "none" },
+                padding: "0px 5px 0px 17px",
+              }}
+            >
+              <MenuIcon sx={{ color: "white" }} />
+            </IconButton>
+          </Toolbar>
+        </div>
+        <div className="search-div">
+          <SearchRoundedIcon />
+          <input type="text" placeholder="Songs, artists and more" />
+        </div>
+        <div className="user-info">
+          <Avatar
+            src={userInfo.userImage}
+            alt="display_image"
+            sx={{ width: "40px", height: "40px" }}
+          />
+          <span>{userInfo.userName}</span>
+        </div>
+        <Box component="nav">
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true,
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              // blur in drawer's background
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
       </Box>
-    </Box>
+    </div>
   );
 };
 

@@ -5,7 +5,7 @@ import LibraryMusicRoundedIcon from "@mui/icons-material/LibraryMusicRounded";
 import "../styles/Sidebar.css";
 import Playlists from "./Playlists";
 
-const Sidebar = () => {
+const Sidebar = ({ onClick }) => {
   return (
     <>
       <div className="sidebar">
@@ -13,6 +13,7 @@ const Sidebar = () => {
           <div className="logo-div">
             <img
               src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png"
+              onClick={onClick}
               alt="Spotify"
             />
           </div>
