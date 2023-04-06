@@ -1,0 +1,55 @@
+.current-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.current-info img {
+  padding: 0px 15px;
+  position: inherit;
+  width: 60px;
+  height: 60px;
+  transition: 0.4s ease-in-out;
+}
+
+.current-info img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.current-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-trackname {
+  font-size: 14px;
+  color: rgb(204, 204, 204);
+  font-family: "Poppins";
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+.current-trackname:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.current-artist span {
+  color: rgb(204, 204, 204);
+  font-family: "Poppins";
+  font-size: 12px;
+  transition: 0.4s ease-in-out;
+}
+
+.current-artist span:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .current-track {
+    display: none;
+  }
+}

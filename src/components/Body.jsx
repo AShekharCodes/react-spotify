@@ -41,6 +41,7 @@ const Body = () => {
         image: playlistImage,
         color: dominantColor,
         description: response.data.description,
+        total_songs: response.data.tracks.items.length,
         tracks: response.data.tracks.items.map(({ track }) => ({
           id: track.id,
           name: track.name,
@@ -73,6 +74,7 @@ const Body = () => {
                 ? selectedPlaylist.description.replace(/&amp;/g, "&")
                 : "Loading..."}
             </span>
+            <span className="total-songs">{`${selectedPlaylist.total_songs} songs`}</span>
           </div>
         </div>
         <div className="tracks-info-header">
@@ -114,7 +116,14 @@ const Body = () => {
                           <img src={image} alt="Track" />
                           <div className="name-div">
                             <div className="main-name">{name}</div>
-                            <div className="artists">{artists.join(", ")}</div>
+                            <div className="artists">
+                              {artists.map((artist, index) => (
+                                <span key={index}>
+                                  {artist}
+                                  {index === artists.length - 1 ? "" : ", "}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         </div>
                         <div className="album">{album}</div>

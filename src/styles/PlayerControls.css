@@ -1,0 +1,46 @@
+.player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.player svg {
+  color: white;
+  cursor: pointer;
+}
+
+.volume {
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  /* margin-left: auto; */
+}
+
+.volume input {
+  padding: 0;
+  background-color: green;
+}
+
+.volume svg {
+  color: white;
+}
+
+@media only screen and (max-width: 700px) {
+  .volume {
+    display: none;
+  }
+
+  .player {
+    margin: auto;
+    left: 0;
+    transform: none;
+    position: inherit;
+  }
+}
