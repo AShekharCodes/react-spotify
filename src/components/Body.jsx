@@ -58,6 +58,42 @@ const Body = () => {
     getInitialPlaylist();
   }, [token, dispatch, selectedPlaylistId, dominantColor]);
 
+  const playTrack = async (
+    id,
+    name,
+    artists,
+    image,
+    context_uri,
+    track_number
+  ) => {
+    const response = await axios.put(
+      `https://api.spotify.com/v1/me/player/play`,
+      {
+        context_uri,
+        offset: {
+          position: track_number - 1,
+        },
+        position_ms: 0,
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    if (response.status === 204) {
+      const currentlyPlaying = {
+        id,
+        name,
+        artists,
+        image,
+      };
+      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
+      dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+    } else dispatch({ type: reducerCases.SET_PLAYER_STATE, playerState: true });
+  };
+
   return (
     <>
       <div className="playlist-tracklist">
@@ -72,7 +108,7 @@ const Body = () => {
             <span className="playlist-desc">
               {selectedPlaylist.description
                 ? selectedPlaylist.description.replace(/&amp;/g, "&")
-                : "Loading..."}
+                : ""}
             </span>
             <span className="total-songs">{`${selectedPlaylist.total_songs} songs`}</span>
           </div>
@@ -115,7 +151,21 @@ const Body = () => {
                         <div className="track-name">
                           <img src={image} alt="Track" />
                           <div className="name-div">
-                            <div className="main-name">{name}</div>
+                            <div
+                              className="main-name"
+                              onClick={() =>
+                                playTrack(
+                                  id,
+                                  name,
+                                  artists,
+                                  image,
+                                  context_uri,
+                                  track_number
+                                )
+                              }
+                            >
+                              {name}
+                            </div>
                             <div className="artists">
                               {artists.map((artist, index) => (
                                 <span key={index}>

@@ -25,12 +25,20 @@ const Playlist = () => {
     };
     getPlaylistData();
   }, [token, dispatch]);
+
+  const changePlaylist = (selectedPlaylistId) => {
+    dispatch({ type: reducerCases.SET_PLAYLIST_ID, selectedPlaylistId });
+  };
   return (
     <>
       <ul className="ul-playlists">
         {playlists.map(({ name, id }) => {
           return (
-            <li className="li-playlists" key={id}>
+            <li
+              className="li-playlists"
+              key={id}
+              onClick={() => changePlaylist(id)}
+            >
               {name}
             </li>
           );
